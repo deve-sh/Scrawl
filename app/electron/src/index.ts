@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from "electron";
+import path from "path";
 import isDev from "electron-is-dev";
+
 import "electron-reload";
 
 const createWindow = () => {
@@ -11,7 +13,11 @@ const createWindow = () => {
 		},
 	});
 
-	win.loadURL(isDev ? "http://localhost:3000" : "about:blank");
+	win.loadURL(
+		isDev
+			? "http://localhost:3000"
+			: path.resolve(__dirname, "../../frontend/dist/index.html")
+	);
 };
 
 // This method will be called when Electron has finished
