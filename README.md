@@ -1,7 +1,5 @@
 # 📓 Scrawl - Git backed Notes
 
----
-
 Heavily inspired by Obsidian and Notion.
 
 ### Why?
