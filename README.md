@@ -26,6 +26,7 @@ The structure could look like this to allow for nesting of notes and folders und
 
 ```
 workspace
+├── workspace.metadata.json
 ├── where-are-we-in-this-universe
 │   ├── index.md
 │   └── metadata.json
@@ -46,3 +47,28 @@ workspace
 ```
 
 The app will parse the files and automatically generate a UI for you to use.
+
+### Using with Git
+
+The directory you choose to be your workspace will automatically be converted into a Git Repository.
+It will be periodically committed and pushed to a your repository's remote.
+
+All these configurations can be done via the app as well.
+
+Whenever you reopen the app, it automatically takes a pull from your GitHub repository to ensure changes to your workspace from any other device are synced.
+
+### Tech Stack
+
+Scrawl will use:
+
+- Electron for the desktop app
+- React for the frontend
+- A base Node.js process that runs inside the Electron shell which will expose APIs to take care of git and file system related operations.
+
+### Core features scope
+
+- Selecting a directory as a repository
+- Being able to use or set a Git Remote and default branch
+- Being able to view all documents on the left on opening the workspace
+- Being able to edit and auto save changes via IPC and FS communication APIs exposed by the Electron Wrapper.
+- Being able to view a changelog of the workspace as well as a changelog of a note file and revert to that point in time.
