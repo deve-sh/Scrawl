@@ -1,0 +1,17 @@
+{
+	"name": "app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "rm -rf dist && tsc && electron ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"electron": "^24.1.2",
+		"electron-is-dev": "^2.0.0",
+		"typescript": "^5.0.4"
+	}
+}
