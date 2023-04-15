@@ -1,17 +1,20 @@
 {
-	"name": "app",
-	"version": "1.0.0",
+	"name": "electron-app",
+	"version": "0.0.1",
 	"description": "",
-	"main": "dist/index.js",
 	"scripts": {
-		"start": "rm -rf dist && tsc && electron ."
+		"start": "rm -rf dist && tsc && electron ./dist/index.js",
+		"dev": "concurrently -k \"tsc --watch\" \"wait-on ./dist/index.js && electron ./dist/index.js\""
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"concurrently": "^8.0.1",
 		"electron": "^24.1.2",
 		"electron-is-dev": "^2.0.0",
-		"typescript": "^5.0.4"
+		"electron-reload": "^2.0.0-alpha.1",
+		"typescript": "^5.0.4",
+		"wait-on": "^7.0.1"
 	}
 }

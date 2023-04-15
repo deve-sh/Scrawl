@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import isDev from "electron-is-dev";
+import "electron-reload";
 
 const createWindow = () => {
 	const win = new BrowserWindow({
