@@ -11,10 +11,9 @@ const createWindow = () => {
 		frame: false,
 		webPreferences: {
 			nodeIntegration: true,
-			preload: path.join(__dirname, "preload.js"),
+			preload: "./preload.js",
 		},
 	});
-	win.setMenu(null);
 	win.loadURL(
 		isDev
 			? "http://localhost:3000"
